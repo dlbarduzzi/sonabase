@@ -6,7 +6,9 @@ export default function Page() {
           Homepage.
         </h1>
       </section>
-      <div className="p-4 font-semibold">Welcome to SonaBase!</div>
+      <div className="p-4">
+        <h1 className="font-semibold">Welcome to SonaBase!</h1>
+      </div>
     </div>
   )
 }
