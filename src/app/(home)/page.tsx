@@ -4,7 +4,7 @@ import { getQueryClient, trpc } from "@/core/trpc/server/query"
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query"
 import { Suspense } from "react"
 
-export default async function Page() {
+export default function Page() {
   const queryClient = getQueryClient()
   queryClient.prefetchQuery(trpc.getUsers.queryOptions())
   return (
