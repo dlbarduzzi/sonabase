@@ -1,8 +1,11 @@
-import { UsersView } from "./users-view"
+import { UsersView } from "./_components/users-view"
 import { getQueryClient, trpc } from "@/core/trpc/server/query"
 
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query"
 import { Suspense } from "react"
+
+// Use this for build to pass since this page depends on db call.
+export const dynamic = "force-dynamic"
 
 export default function Page() {
   const queryClient = getQueryClient()
