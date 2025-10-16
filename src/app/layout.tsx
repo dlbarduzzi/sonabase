@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next"
 
-import { cn } from "@/core/helper"
+import { cn } from "@/core/css"
 import { siteConfig } from "@/core/site"
 import { fontGeistSans, fontGeistMono } from "@/core/fonts"
 
