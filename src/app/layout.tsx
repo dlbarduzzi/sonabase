@@ -3,6 +3,8 @@ import type { Metadata, Viewport } from "next"
 import { cn, siteConfig } from "@/core/base"
 import { fontGeistSans, fontGeistMono } from "@/core/fonts"
 
+import { TRPCReactProvider } from "@/core/trpc/client/provider"
+
 import "@/core/styles/globals.css"
 
 export const metadata: Metadata = {
@@ -42,7 +44,9 @@ export default function RootLayout({
           fontGeistMono.variable,
         )}
       >
-        {children}
+        <TRPCReactProvider>
+          {children}
+        </TRPCReactProvider>
       </body>
     </html>
   )
