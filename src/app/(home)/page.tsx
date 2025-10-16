@@ -1,4 +1,4 @@
-import { UsersView } from "./_components/users-view"
+import { UsersView } from "./users-view"
 import { getQueryClient, trpc } from "@/core/trpc/server/query"
 
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query"
