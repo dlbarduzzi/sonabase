@@ -3,7 +3,7 @@ import localFont from "next/font/local"
 export const fontGeistSans = localFont({
   src: [
     {
-      path: "./fonts/Geist.ttf",
+      path: "../../public/fonts/Geist.ttf",
       style: "normal",
       weight: "100 900",
     },
@@ -14,7 +14,7 @@ export const fontGeistSans = localFont({
 export const fontGeistMono = localFont({
   src: [
     {
-      path: "./fonts/GeistMono.ttf",
+      path: "../../public/fonts/GeistMono.ttf",
       style: "normal",
       weight: "100 900",
     },

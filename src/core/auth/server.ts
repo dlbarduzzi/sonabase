@@ -3,7 +3,7 @@ import { drizzleAdapter } from "better-auth/adapters/drizzle"
 
 import { db } from "@/core/db/connect"
 import { env } from "@/core/env/server"
-import { siteConfig } from "@/core/base"
+import { siteConfig } from "@/core/site"
 
 export const auth = betterAuth({
   appName: siteConfig.name,

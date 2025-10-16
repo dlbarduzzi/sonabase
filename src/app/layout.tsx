@@ -1,11 +1,12 @@
 import type { Metadata, Viewport } from "next"
 
-import { cn, siteConfig } from "@/core/base"
+import { cn } from "@/core/helper"
+import { siteConfig } from "@/core/site"
 import { fontGeistSans, fontGeistMono } from "@/core/fonts"
 
 import { TRPCReactProvider } from "@/core/trpc/client/provider"
 
-import "@/core/styles/globals.css"
+import "@/styles/globals.css"
 
 export const metadata: Metadata = {
   title: {

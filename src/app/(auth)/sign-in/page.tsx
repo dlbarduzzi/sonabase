@@ -8,10 +8,7 @@ export default function Page() {
           Sign in.
         </h1>
       </section>
-      <div className="p-4">
-        <h1 className="font-semibold">Sign in!</h1>
-        <SignIn />
-      </div>
+      <SignIn />
     </div>
   )
 }
