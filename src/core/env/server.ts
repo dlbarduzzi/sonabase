@@ -6,6 +6,8 @@ export const env = createEnv({
     NODE_ENV: z.enum(["test", "development", "production"]),
     LOG_LEVEL: z.enum(["debug", "info", "warn", "error", "silent"]),
     DATABASE_URL: z.url(),
+    BETTER_AUTH_URL: z.url(),
+    BETTER_AUTH_SECRET: z.string().min(12),
   },
   onValidationError: issues => {
     console.error(
@@ -20,6 +22,8 @@ export const env = createEnv({
     NODE_ENV: process.env.NODE_ENV,
     LOG_LEVEL: process.env.LOG_LEVEL,
     DATABASE_URL: process.env.DATABASE_URL,
+    BETTER_AUTH_URL: process.env.BETTER_AUTH_URL,
+    BETTER_AUTH_SECRET: process.env.BETTER_AUTH_SECRET,
     /* eslint-enable node/no-process-env */
   },
   emptyStringAsUndefined: true,
