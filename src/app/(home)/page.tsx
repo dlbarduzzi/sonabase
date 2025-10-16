@@ -1,3 +1,5 @@
+import { Navbar } from "@/components/navbar"
+
 export default function Page() {
   return (
     <div>
@@ -6,6 +8,7 @@ export default function Page() {
           Homepage.
         </h1>
       </section>
+      <Navbar />
       <div className="p-4">
         <h1 className="font-semibold">Homepage!</h1>
       </div>
