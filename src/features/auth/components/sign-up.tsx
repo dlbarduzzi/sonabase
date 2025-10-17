@@ -9,6 +9,8 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm, Controller } from "react-hook-form"
 
 import { AuthCard } from "./card"
+import { GitHubButton } from "./github-button"
+import { GoogleButton } from "./google-button"
 
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
@@ -173,6 +175,20 @@ export function SignUp() {
           </Button>
         </div>
       </form>
+      <div className="my-6">
+        <div className="relative">
+          <div aria-hidden="true" className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-t-gray-200" />
+          </div>
+          <div className="relative flex justify-center text-sm font-medium">
+            <span className="bg-white px-6 text-gray-500">Or continue with</span>
+          </div>
+        </div>
+      </div>
+      <div className="grid grid-cols-1 gap-4">
+        <GitHubButton isSubmitting={isSubmitting} />
+        <GoogleButton isSubmitting={isSubmitting} />
+      </div>
     </AuthCard>
   )
 }
