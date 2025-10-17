@@ -1,8 +1,11 @@
 import * as React from "react"
 
 import { cn } from "@/core/css"
+import { FaEye, FaEyeSlash } from "react-icons/fa"
 
-function Input({ className, type, ...props }: React.ComponentProps<"input">) {
+type InputProps = React.ComponentProps<"input">
+
+function Input({ className, type, ...props }: InputProps) {
   return (
     <input
       type={type}
@@ -22,4 +25,27 @@ function Input({ className, type, ...props }: React.ComponentProps<"input">) {
   )
 }
 
-export { Input }
+type InputPasswordProps = {
+  show: boolean
+  setShow: React.Dispatch<React.SetStateAction<boolean>>
+  isSubmitting: boolean
+} & InputProps
+
+function InputPassword({ show, setShow, isSubmitting, ...props }: InputPasswordProps) {
+  return (
+    <div className="relative">
+      <Input type={show ? "text" : "password"} {...props} />
+      <div className="absolute inset-y-0 right-0 flex items-center pr-3">
+        <div
+          role="button"
+          onClick={() => setShow(() => !show)}
+          className={cn("text-gray-300", isSubmitting && "pointer-events-none")}
+        >
+          {show ? <FaEye className="size-6" /> : <FaEyeSlash className="size-6" />}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export { Input, InputPassword }

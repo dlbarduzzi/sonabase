@@ -9,8 +9,8 @@ import { cn } from "@/core/css"
 
 const buttonVariants = cva(
   `inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm
-  font-semibold transition-all disabled:pointer-events-none shrink-0 outline-none
-  focus-visible:ring-2 focus-visible:ring-offset-2`,
+  font-semibold transition-all disabled:pointer-events-none shrink-0 cursor-pointer
+  outline-none focus-visible:ring-2 focus-visible:ring-offset-2`,
   {
     variants: {
       variant: {

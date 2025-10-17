@@ -2,14 +2,15 @@
 
 import type { SignInSchema } from "@/features/auth/schemas/sign-in"
 
+import { useState } from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm, Controller } from "react-hook-form"
 
 import { AuthCard } from "./card"
 
-import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
+import { Input, InputPassword } from "@/components/ui/input"
 
 import {
   Field,
@@ -20,9 +21,12 @@ import {
   FieldLabel,
 } from "@/components/ui/field"
 
+import { delay } from "@/core/time"
 import { signInSchema } from "@/features/auth/schemas/sign-in"
 
 export function SignIn() {
+  const [showPasswordValue, setShowPasswordValue] = useState(false)
+
   const form = useForm<SignInSchema>({
     resolver: zodResolver(signInSchema),
     defaultValues: {
@@ -34,7 +38,11 @@ export function SignIn() {
 
   const { isSubmitting } = form.formState
 
-  function onSubmit(data: SignInSchema) {
+  async function onSubmit(data: SignInSchema) {
+    setShowPasswordValue(() => false)
+
+    await delay(3000)
+
     // eslint-disable-next-line no-console
     console.log(data)
   }
@@ -56,6 +64,7 @@ export function SignIn() {
                 <Input
                   {...field}
                   id="form-sign-in-email"
+                  disabled={isSubmitting}
                   aria-invalid={fieldState.invalid}
                   placeholder="you@email.com"
                   autoComplete="off"
@@ -74,12 +83,17 @@ export function SignIn() {
                 <FieldLabel htmlFor="form-sign-in-password">
                   Password
                 </FieldLabel>
-                <Input
+                <InputPassword
                   {...field}
                   id="form-sign-in-password"
+                  disabled={isSubmitting}
                   aria-invalid={fieldState.invalid}
                   placeholder="Enter your password..."
                   autoComplete="off"
+                  className="pr-12"
+                  show={showPasswordValue}
+                  setShow={setShowPasswordValue}
+                  isSubmitting={isSubmitting}
                 />
                 {fieldState.invalid ? <FieldError errors={[fieldState.error]} /> : null}
               </Field>
@@ -99,6 +113,7 @@ export function SignIn() {
                 <Checkbox
                   id="form-sign-in-remember-me"
                   name={field.name}
+                  disabled={isSubmitting}
                   aria-invalid={fieldState.invalid}
                   onCheckedChange={value => {
                     field.onChange(value)
@@ -121,7 +136,14 @@ export function SignIn() {
           )}
         />
         <div>
-          <Button type="submit" size="md" className="w-full">Sign in</Button>
+          <Button
+            type="submit"
+            size="md"
+            disabled={isSubmitting}
+            className="w-full"
+          >
+            Sign in
+          </Button>
         </div>
       </form>
     </AuthCard>
