@@ -23,6 +23,8 @@ export default antfu({
     "prefer-const": "error",
     "perfectionist/sort-imports": "off",
     "perfectionist/sort-named-imports": "off",
+    "react/no-array-index-key": "off",
+    "react-refresh/only-export-components": "off",
     "regexp/prefer-d": "off",
     "regexp/no-useless-escape": "off",
     "regexp/no-unused-capturing-group": "off",

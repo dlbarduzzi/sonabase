@@ -9,7 +9,7 @@ import { siteConfig } from "@/core/site"
 
 export function Navbar() {
   return (
-    <nav className="bg-gray-300 border-b border-b-gray-400/40">
+    <nav className="bg-white border-b border-b-gray-200">
       <Container>
         <div className="h-16 flex items-center justify-between">
           <div className="flex shrink-0">

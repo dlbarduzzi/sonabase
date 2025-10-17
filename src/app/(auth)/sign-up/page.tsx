@@ -1,4 +1,11 @@
-import { SignUp } from "./_components/sign-up"
+import type { Metadata } from "next"
+
+import { SignUp } from "@/features/auth/components/sign-up"
+import { AuthLayout } from "@/features/auth/components/layout"
+
+export const metadata: Metadata = {
+  title: "Sign up",
+}
 
 export default function Page() {
   return (
@@ -8,7 +15,9 @@ export default function Page() {
           Sign up.
         </h1>
       </section>
-      <SignUp />
+      <AuthLayout>
+        <SignUp />
+      </AuthLayout>
     </div>
   )
 }

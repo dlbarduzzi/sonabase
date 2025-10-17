@@ -1,4 +1,11 @@
-import { SignIn } from "./_components/sign-in"
+import type { Metadata } from "next"
+
+import { SignIn } from "@/features/auth/components/sign-in"
+import { AuthLayout } from "@/features/auth/components/layout"
+
+export const metadata: Metadata = {
+  title: "Sign in",
+}
 
 export default function Page() {
   return (
@@ -8,7 +15,9 @@ export default function Page() {
           Sign in.
         </h1>
       </section>
-      <SignIn />
+      <AuthLayout>
+        <SignIn />
+      </AuthLayout>
     </div>
   )
 }
