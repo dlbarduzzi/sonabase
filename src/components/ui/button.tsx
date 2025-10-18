@@ -9,13 +9,13 @@ import { cn } from "@/core/css"
 
 const buttonVariants = cva(
   `inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm
-  font-semibold transition-all disabled:pointer-events-none shrink-0 cursor-pointer
+  font-medium transition-all disabled:pointer-events-none shrink-0 cursor-pointer
   outline-none focus-visible:ring-2 focus-visible:ring-offset-2`,
   {
     variants: {
       variant: {
         default: `bg-gray-900 text-white hover:bg-gray-800
-          focus-visible:ring-gray-900 disabled:bg-gray-700`,
+          focus-visible:ring-gray-900 disabled:bg-gray-700 font-semibold`,
         outline: `border border-gray-300 bg-white text-gray-900 hover:bg-gray-100
           focus-visible:ring-gray-300 disabled:bg-gray-100 disabled:text-gray-400`,
       },

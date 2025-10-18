@@ -2,6 +2,7 @@
 
 import type { SignInSchema } from "@/features/auth/schemas/sign-in"
 
+import { toast } from "sonner"
 import { useState } from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm, Controller } from "react-hook-form"
@@ -24,7 +25,6 @@ import {
   FieldLabel,
 } from "@/components/ui/field"
 
-import { delay } from "@/core/time"
 import { signInSchema } from "@/features/auth/schemas/sign-in"
 
 export function SignIn() {
@@ -44,10 +44,12 @@ export function SignIn() {
   async function onSubmit(data: SignInSchema) {
     setShowPasswordValue(() => false)
 
-    await delay(3000)
-
-    // eslint-disable-next-line no-console
-    console.log(data)
+    if (data.email === "you@test.com") {
+      toast.error("This email is invalid")
+    }
+    else {
+      toast.success("Successfully signed in")
+    }
   }
   return (
     <AuthCard action="sign-in" isSubmitting={isSubmitting}>

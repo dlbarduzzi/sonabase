@@ -4,6 +4,7 @@ import { cn } from "@/core/css"
 import { siteConfig } from "@/core/site"
 import { fontGeistSans, fontGeistMono } from "@/core/fonts"
 
+import { Toaster } from "@/components/ui/sonner"
 import { TRPCReactProvider } from "@/core/trpc/client/provider"
 
 import "@/styles/globals.css"
@@ -45,6 +46,7 @@ export default function RootLayout({
           fontGeistMono.variable,
         )}
       >
+        <Toaster />
         <TRPCReactProvider>
           {children}
         </TRPCReactProvider>

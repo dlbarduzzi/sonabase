@@ -14,7 +14,6 @@ export function GitHubButton({ isSubmitting }: GitHubButtonProps) {
       size="md"
       variant="outline"
       disabled={isSubmitting}
-      className="font-medium"
     >
       <Image
         src="/images/github.svg"

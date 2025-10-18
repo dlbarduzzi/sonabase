@@ -14,7 +14,6 @@ export function GoogleButton({ isSubmitting }: GoogleButtonProps) {
       size="md"
       variant="outline"
       disabled={isSubmitting}
-      className="font-medium"
     >
       <Image
         src="/images/google.svg"
