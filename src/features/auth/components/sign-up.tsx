@@ -13,6 +13,7 @@ import { GitHubButton } from "./github-button"
 import { GoogleButton } from "./google-button"
 
 import { Button } from "@/components/ui/button"
+import { Spinner } from "@/components/ui/spinner"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Input, InputPassword } from "@/components/ui/input"
 
@@ -171,7 +172,7 @@ export function SignUp() {
             className="w-full"
             disabled={isSubmitting}
           >
-            Create Account
+            {isSubmitting ? <Spinner /> : "Create Account"}
           </Button>
         </div>
       </form>
